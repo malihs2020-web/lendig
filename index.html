@@ -9,6 +9,18 @@
       content="Юридическая консультация для бизнеса и частных лиц: корпоративное право, налоговые споры, недвижимость, семейное и трудовое право."
     />
     <title>Lex Consult — Юридическая консультация</title>
+    <script>
+      (function () {
+        var stored = localStorage.getItem('theme');
+        var theme =
+          stored === 'light' || stored === 'dark'
+            ? stored
+            : window.matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light';
+        document.documentElement.classList.add(theme);
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

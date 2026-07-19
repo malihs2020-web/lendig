@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
+import { ThemeToggle } from '@/components/theme-toggle'
 
 const navLinks = [
   { label: 'Услуги', href: '/#services' },
@@ -33,9 +34,12 @@ export function SiteHeader() {
           </nav>
         )}
 
-        <Button asChild size="sm">
-          <Link to="/consultation">Записаться</Link>
-        </Button>
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <Button asChild size="sm">
+            <Link to="/consultation">Записаться</Link>
+          </Button>
+        </div>
       </div>
     </header>
   )
